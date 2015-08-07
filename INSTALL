@@ -1,0 +1,13 @@
+1. ClamAV (http://www.clamav.net) must be installed and tested.
+
+2. php-clamav Installation:
+
+tar xvzf php-clamav-0.XX.tar.gz
+cd php-clamav-0.XX
+phpize
+./configure --with-clamav
+make  
+cp modules/clamav.so /usr/local/lib/php/extensions/
+(restart Apache)
+service httpd restart
+

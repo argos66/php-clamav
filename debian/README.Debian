@@ -1,0 +1,115 @@
+php-clamav for Debian :
+-----------------------
+
+The php-clamav extension is installed under the php additional .ini files directory.
+
+If you use the debconf feature of this package, you don't need to create clamav.ini manually!
+To enable this library create clamav.ini configfile in /etc/php/conf.d/ and add the following:
+--------------------------------
+extension=clamav.so
+[clamav]
+clamav.dbpath="/var/lib/clamav"
+clamav.maxreclevel=16
+clamav.maxfiles=10000
+clamav.maxfilesize=26214400
+clamav.maxscansize=104857600
+clamav.keeptmp=0
+clamav.load_db_on_startup=0
+clamav.tmpdir="/tmp"
+--------------------------------
+
+
+clamav.ini parameters :
+-----------------------
+
+clamav.dbpath :
+	Path to a directory containing database files.
+	Default: /var/lib/clamav/
+
+clamav.maxreclevel :
+	Nested  archives  are  scanned  recursively,  e.g.  if a Zip archive contains a RAR file, all files within it will also be
+	scanned. This options specifies how deeply the process should be continued. Warning: disabling this limit  or  setting  it
+	too high may result in severe damage to the system.
+	Default: 16
+
+clamav.maxfiles :
+	Number of files to be scanned within an archive, a document, or any other kind of container. Warning: disabling this limit
+	or setting it too high may result in severe damage to the system.
+	Default: 10000
+
+clamav.maxfilesize :
+	Files  larger  than  this limit won't be scanned. Affects the input file itself as well as files contained inside it (when
+	the input file is an archive, a document or some other kind of container). Warning: disabling this limit or setting it too
+	high may result in severe damage to the system.
+	Default: 26214400 (25M)
+
+clamav.maxscansize :
+	Sets the maximum amount of data to be scanned for each input file. Archives and other containers are recursively extracted
+	and scanned up to this value. Warning: disabling this limit or setting it too high may result in severe damage to the system.
+	Default: 104857600 (100M)
+
+clamav.keeptmp :
+	If keeptmp = 1 then don't use temp directory for scan.
+	Default: 0
+
+clamav.load_db_on_startup :
+	Clamav database take many space of memory, if you load db on startup you speedup scan process.
+	By default, database are load on each scan and this method take a time more important.
+	Default: 0
+
+clamav.tmpdir :
+	Optional path to the global temporary directory.
+	Default: /tmp
+
+
+ClamAV PHP Functions :
+----------------------
+
+string cl_info();
+ Description: 
+ 	Returns information about ClamAV (version and signatures loaded).
+ Parameters: 
+ 	None.
+ Return value:
+ 	Returns a text line with ClamAV information in english.
+
+int cl_scanfile(string filename, string virusname);
+ Description:
+	Scan a file given a filename, returns the virusname and return code of the 'cl_scanfile()' API function.
+ Parameters:
+ 	filename: the absolute / relative path to the file.
+	virusname: This parameter is used to retrieve the virusname if a virus was found.
+ Return value:
+    Return the result of ClamAV scan.
+
+string cl_engine(long maxfiles, long maxfilesize, long maxscansize, long maxreclevel, long keeptmp);
+ Description:
+	Load ClamAV engine options over clamav.ini default options.
+ Parameters:
+ 	maxfiles: Maximum number of file to scan.
+	maxfilesize: Maximum size per file.
+	maxscansize: Maximum size per file.
+	maxreclevel: Maximum level of recursion.
+	keeptmp: Don't use the temporary directory for scan.
+ Return value:
+ 	Returns success or failure.
+
+string cl_pretcode(int retcode);
+ Description:
+ 	Translates the ClamAV return code.
+ Parameters: 
+ 	retcode: The return code of a cl_scanfile_ex(filename, options, virusname, retcode) or 
+		 cl_scanbuff_ex(buffer, size_buffer, virusname, retcode) function
+ Return value:
+ 	Returns a string with the return code description. 
+
+string cl_debug();
+ Description: 
+ 	Turn on debug information.
+ Parameters: 
+ 	None.
+ Return value:
+ 	Returns success.
+
+ -- Argos <argos66@gmail.com>, Thu, 22 Oct 2009 19:25:00 +0000
+ -- Jonas Genannt <jonas.genannt@capi2name.de>, Wed, 31 Aug 2005 19:36:01 +0000

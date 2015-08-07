@@ -1,0 +1,40 @@
+# translation of php-clamav debconf to Portuguese
+# Copyright (C) 2007 the php-clamav's copyright holder
+# This file is distributed under the same license as the php-clamav package.
+#
+# Américo Monteiro <a_monteiro@netcabo.pt>, 2007, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: php-clamav 0.15.0\n"
+"Report-Msgid-Bugs-To: php-clamav@packages.debian.org\n"
+"POT-Creation-Date: 2011-06-04 10:12+0200\n"
+"PO-Revision-Date: 2011-05-28 17:35+0100\n"
+"Last-Translator: Argos <argos66@gmail.com>\n"
+"Language-Team: Portuguese <traduz@debianpt.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Type: boolean
+#. Description
+#: ../php-clamav.templates:1001
+#, fuzzy
+msgid "Configure clamav.ini option file for php-clamav?"
+msgstr "Configurar o ficheiro de opções clamav.ini para php-clamav?"
+
+#. Type: boolean
+#. Description
+#: ../php-clamav.templates:1001
+#, fuzzy
+#| msgid ""
+#| "These scripts can add the necessary options for php-clamav to the PHP ini "
+#| "file."
+msgid ""
+"These scripts can add the necessary options for php-clamav to the PHP ini "
+"extension directory."
+msgstr ""
+"Estes scripts podem adicionar as opções necessárias para o clamavLib ao "
+"ficheiro ini do PHP."

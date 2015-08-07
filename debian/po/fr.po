@@ -1,0 +1,46 @@
+# Translation of php-clamav debconf templates to French
+# Copyright (C) 2005-2010 Debian French l10n team <debian-l10n-french@lists.debian.org>
+# This file is distributed under the same license as the php-clamav package.
+#
+# Translators:
+# Aurelien Ricard <r.aurelien@wanadoo.fr>, 2005 (clamavlib package translation).
+# Christian Perrier <bubulle@debian.org>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: php-clamav\n"
+"Report-Msgid-Bugs-To: php-clamav@packages.debian.org\n"
+"POT-Creation-Date: 2011-06-04 10:12+0200\n"
+"PO-Revision-Date: 2011-05-28 17:36+0100\n"
+"Last-Translator: Argos <argos66@gmail.com>\n"
+"Language-Team: fr <debian-l10n-french@lists.debian.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: FR\n"
+"X-Poedit-Country: FR\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. Type: boolean
+#. Description
+#: ../php-clamav.templates:1001
+#, fuzzy
+msgid "Configure clamav.ini option file for php-clamav?"
+msgstr "Faut-il configurer le fichier d'options clamav.ini pour php-clamav ?"
+
+#. Type: boolean
+#. Description
+#: ../php-clamav.templates:1001
+#, fuzzy
+#| msgid ""
+#| "These scripts can add the necessary options for php-clamav to the PHP ini "
+#| "file."
+msgid ""
+"These scripts can add the necessary options for php-clamav to the PHP ini "
+"extension directory."
+msgstr ""
+"Il est possible d'ajouter automatiquement les options nécessaires pour php-"
+"clamav dans le répertoire des fichiers de paramètres pour les extensions de "
+"PHP."

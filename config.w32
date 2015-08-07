@@ -1,0 +1,13 @@
+// $Id$
+// vim:ft=javascript
+
+// If your extension references something external, use ARG_WITH
+// ARG_WITH("clamav", "for clamav support", "no");
+
+// Otherwise, use ARG_ENABLE
+// ARG_ENABLE("clamav", "enable clamav support", "no");
+
+if (PHP_CLAMAV != "no") {
+	EXTENSION("clamav", "clamav.c");
+}
+

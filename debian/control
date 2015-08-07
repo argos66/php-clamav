@@ -1,0 +1,20 @@
+Source: php-clamav
+Section: web
+Priority: optional
+Maintainer: Argos <argos66@gmail.com>
+Build-Depends: debhelper (>=7.0.50~), php5-dev (>= 5.3.0), libclamav-dev (>= 0.95.0), po-debconf, libltdl7-dev (>=2.2.4) | libltdl-dev (>=2.2.4), libtommath-dev
+Standards-Version: 3.9.3
+
+Package: php-clamav
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${php:Depends}, libltdl7, libtommath0
+Homepage: http://sourceforge.net/projects/php-clamav/
+Conflicts: php5-clamavlib, php5-clamav
+Replaces: php5-clamavlib, php5-clamav
+Recommends: clamav-freshclam
+Enhances: php5
+Description: ClamAV Interface for PHP Scripts
+ A PHP extension that allow to incorporate virus scanning
+ features on your PHP scripts. It uses the ClamAV API for virus scanning.
+ All functions provides by this package are documented.
+ .

@@ -1,0 +1,62 @@
+# php-clamav po-debconf translation to Spanish
+# Copyright (C) 2010 Software in the Public Interest
+# This file is distributed under the same license as the php-clamav package.
+#
+# Changes:
+#   - Initial translation
+#       Omar Campagne <ocampagne@gmail.com>, 2010
+#
+#   - Updates
+#       TRANSLATOR
+#
+# Traductores, si no conocen el formato PO, merece la pena leer la
+# documentación de gettext, especialmente las secciones dedicadas a este
+# formato, por ejemplo ejecutando:
+#       info -n '(gettext)PO Files'
+#       info -n '(gettext)Header Entry'
+#
+# Equipo de traducción al español, por favor lean antes de traducir
+# los siguientes documentos:
+#
+#   - El proyecto de traducción de Debian al español
+#     http://www.debian.org/intl/spanish/
+#     especialmente las notas y normas de traducción en
+#     http://www.debian.org/intl/spanish/notas
+#
+#   - La guía de traducción de po's de debconf:
+#     /usr/share/doc/po-debconf/README-trans
+#     o http://www.debian.org/intl/l10n/po-debconf/README-trans
+msgid ""
+msgstr ""
+"Project-Id-Version: php5-clamav 0.15.3\n"
+"Report-Msgid-Bugs-To: php-clamav@packages.debian.org\n"
+"POT-Creation-Date: 2011-06-04 10:12+0200\n"
+"PO-Revision-Date: 2011-05-28 17:36+0100\n"
+"Last-Translator: Argos <argos66@gmail.com>\n"
+"Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../php-clamav.templates:1001
+#, fuzzy
+msgid "Configure clamav.ini option file for php-clamav?"
+msgstr "¿Desea configurar el fichero de opciones «clamav.ini» para php-clamav?"
+
+#. Type: boolean
+#. Description
+#: ../php-clamav.templates:1001
+#, fuzzy
+#| msgid ""
+#| "These scripts can add the necessary options for php-clamav to the PHP ini "
+#| "file."
+msgid ""
+"These scripts can add the necessary options for php-clamav to the PHP ini "
+"extension directory."
+msgstr ""
+"Estos scripts pueden añadir las opciones necesarias en el directorio de "
+"extensiones del fichero ini de PHP para el correcto funcionamiento de php-"
+"clamav."

@@ -1,0 +1,227 @@
+php-clamav (0.15.8) unstable; urgency=medium
+
+  * Improve database reload during cl_scanfile.
+  * Check compatibility with php 5.5.
+
+ -- Argos <argos66@gmail.com>  Thu, 05 Aug 2014 10:50:00 +0200
+
+php-clamav (0.15.7) unstable; urgency=medium
+
+  * Improve cl_scanfile z_val variables initialization.
+  * Fix compatibility with php 5.4.
+
+ -- Argos <argos66@gmail.com>  Sun, 07 Jul 2012 10:30:00 +0200
+
+php-clamav (0.15.6) unstable; urgency=medium
+
+  * Fix segfault (due to double freeing).
+  * Add load_db_on_startup parameter.
+  * Add variables initialization and reduce scope.
+  * Know memory leak when load_db_on_startup is 0, issue not fixed.
+
+ -- Argos <argos66@gmail.com>  Sat, 10 Sep 2011 10:30:00 +0200
+
+php-clamav (0.15.5) unstable; urgency=medium
+
+  * Add compatibility with dpkg v3.
+  * Add spec file for build into RPM like systems.
+  * Rename package from php5-clamav to php-clamav.
+  * Change reference from PHP5 to PHP.
+
+ -- Argos <argos66@gmail.com>  Sun, 28 May 2011 10:30:00 +0200
+
+php-clamav (0.15.4) unstable; urgency=medium
+
+  * Update translation files (Closes: #579100)
+  * Add support for Clamav 0.97.
+  * Load clamav databases on each scan (reduce memory consumption).
+  * Fix lintian warning.
+
+ -- Argos <argos66@gmail.com>  Sun, 22 May 2011 10:30:00 +0200
+
+php-clamav (0.15.3) unstable; urgency=low
+
+  * Add support for Clamav 0.96.
+  * Update translation files (Closes: #571308, #572583)
+  * Fix minor mistake in description (Closes: #572566)
+
+ -- Argos <argos66@gmail.com>  Sun, 11 Apr 2010 10:36:00 +0200
+
+php-clamav (0.15.2) unstable; urgency=low
+
+  * Add support for PHP 5.3 and Zend API 20090626 (Closes: #570185)
+  * Remove support of very old ZEND API version.
+  * Cleanup code (reference to PHP4 unsupported).
+  * Change declaration of globals variables for use PHP globals (thread safe
+    fix).
+  * Fix clamav database loading when it isn't in the default directory.
+  * Update translation files (Closes: #570334, #570403, #570451, #570780)
+  * Minor fix of variables declaration.
+  * Remove phpapi-20060613 debian dependency.
+
+ -- Argos <argos66@gmail.com>  Sun, 21 Feb 2010 19:35:14 +0100
+
+php-clamav (0.15.0) unstable; urgency=low
+
+  * Add phpclamav_test.php for test and valid is extension is correctly loaded.
+  * Change defaults values the clamav.ini by the default ClamAV values.
+  * Suppress clamav.archivememlim parameters, no longuer support on clamav 0.95
+  * Update documentation.
+  * Add clamav.maxscansize parameters.
+  * Fix security bug that doesn't scan file bigger than ~20MB.
+  * cl_scanfile() now return the result of ClamAV function.
+  * Suppress cl_scanfile_ex() function.
+  * Cleanup code.
+
+ -- Argos <argos66@gmail.com>  Mon, 09 Dec 2009 00:00:00 +0100
+
+php-clamav (0.14.4) unstable; urgency=low
+
+  * Valid for Clamav 0.95.3.
+  * Fix lintian warning for "-e" in debian install scripts.
+
+ -- Argos <argos66@gmail.com>  Sat, 30 Oct 2009 01:01:40 +0100
+
+php-clamav (0.14.3) unstable; urgency=low
+
+  * Update documentations files.
+  * Create clamav.ini under php/conf.d instead of modify php.ini
+  * Fix lintian error and warning on Debian/Ubuntu packaging.
+  * Fix debuild warning.
+  * Minor fix (warning and esthetic code).
+
+ -- Argos <argos66@gmail.com>  Sat, 24 Oct 2009 00:01:40 -0100
+
+php-clamav (0.14-2.1) unstable; urgency=low
+
+  * Add all libclamav returns code.
+  * Suppress all warning messages on compilation.
+  * Reorganizing source code (ident, spaces, etc ...).
+  * Delete compatibility functions (clam_scan_file, clam_get_version).
+  * Regenere somes compilation files by ext_skel from php v5.2.
+
+ -- Argos <argos66@gmail.com>  Sat, 21 Oct 2009 00:01:40 -0100
+
+php-clamav (0.14-1.1) unstable; urgency=low
+
+  * Fork to php-clamav
+  * Add versions informations on phpinfo() view.
+
+ -- Argos <argos66@gmail.com>  Sat, 20 Oct 2009 00:01:40 -0100
+
+php-clamavlib (0.13-1.5) unstable; urgency=low
+
+  * Fix a bug that cause a module crash.
+  * Delete support for PHP4.
+
+ -- Argos <argos66@gmail.com>  Sat, 18 Jun 2009 00:01:40 -0100
+
+php-clamavlib (0.13-1.4) unstable; urgency=low
+
+  * Change default db directory to /var/lib/clamav.
+  * Delete unsupported parameters (maxratio and archivememlim).
+  * Rename function cl_setlimits to cl_engine.
+  * Implement keeptmp(CL_ENGINE_KEEPTMP) and tmpdir(CL_ENGINE_TMPDIR) parameters.
+  * Add cl_debug function.
+  * Porting code for libclamav6 only compatibility.
+
+ -- Argos <argos66@gmail.com>  Sat, 12 Jun 2009 00:01:40 -0100
+
+php-clamavlib (0.13-1.3) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Bumped standards version to 3.8.0
+  * Corrected FTBFS by porting the code from libclamav4 to 5. (Closes: #498554)
+
+ -- Michael Casadevall <sonicmctails@gmail.com>  Thu, 11 Sep 2008 00:01:40 -0400
+
+php-clamavlib (0.13-1.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Removed all maxratio references (Closes: #479885)
+
+ -- Adam Sommer <asommer70@gmail.com>  Mon, 30 Jun 2008 16:19:54 -0400
+
+php-clamavlib (0.13-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix bashism in postinst script (Closes: #472235)
+  * Bump Standards-Version to 3.7.3.
+
+ -- Chris Lamb <chris@chris-lamb.co.uk>  Sat, 12 Apr 2008 04:26:31 +0100
+
+php-clamavlib (0.13-1) unstable; urgency=low
+
+  * New Upstream Release
+  * removed php4 package (Closes: #418311)
+  * Added: Dutch translation (Bart Cronelis) (Closes: #422246)
+  * Added: Portiguese translation (Miguel Figueiredo) (Closes: #437279)
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Fri, 26 Oct 2007 19:38:56 +0200
+
+php-clamavlib (0.12a-4) unstable; urgency=low
+
+  * Included patch from Stephen Gran (Closes: #412845)
+    - It's much better than mine.
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Thu, 1 Mar 2007 21:55:24 +0000
+
+php-clamavlib (0.12a-3) unstable; urgency=low
+
+  * Added: German translation (Closes: #407692) (Helge Kreutzmann)
+  * Fix compile error against new clamavlib (Closes: #409695)
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Wed, 7 Feb 2007 22:34:23 +0100
+
+php-clamavlib (0.12a-2) unstable; urgency=low
+
+  * Updated swedish translation (Daniel Nylander) (Closes: #342926)
+  * Bumped up to standards version 3.7.2
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Thu, 17 Aug 2006 12:50:23 +0200
+
+php-clamavlib (0.12a-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fix up dependency handling in debian/control and debian/rules to use
+    shlibdeps instead of hardcoded library deps, phpapi-* instead of
+    php4/php5 and misc:Depends instead of a hardcoded debconf dep.
+  * Lower dependency on freshclam to a suggests, since it doesn't appear
+    that we actually NEED it to work, it's just nice to have on the system.
+  * Remove the bogus conflict/replace with php-clamav, since we don't
+    actually have any file overlaps between our packages.
+  * All changes by Adam Conrad <adconrad@0c3.net> (QA Check)
+  * Fix typo in templates. (Closes: #334056) (Christian Perrier)
+  * Added: Czech translation (Closes: #333984) (Miroslav Kure)
+  * Added: French translation (Aurelien Ricard)
+    (Closes: #335532, #335521, #335520)
+  * Added Swedish translation (Daniel Nylander) (Closes: #338650)
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Sun, 20 Nov 2005 13:05:52 +0200
+
+php-clamavlib (0.12-1) unstable; urgency=low
+  
+  *  New upstream release.
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Sun,  2 Oct 2005 12:34:23 +0200
+
+php-clamavlib (0.11-3) unstable; urgency=low
+
+  * added debconf question for configure php.ini
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Mon, 19 Sep 2005 14:33:53 +0200
+
+php-clamavlib (0.11-2) unstable; urgency=low
+
+  * debian/rules: php4-build chmod a+x configure by Andreas Jochens Closes: #327300
+  * debian/rules: php5-build chmod a+x configure
+  * renamed docs to php4-clamavlib.docs
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Fri,  9 Sep 2005 11:47:29 +0000
+
+php-clamavlib (0.11-1) unstable; urgency=low
+
+  * Initial release Closes: #325934,#326526
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Sun,  4 Sep 2005 11:05:37 +0000
+

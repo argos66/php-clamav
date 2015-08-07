@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: php-clamavlib\n"
+"Report-Msgid-Bugs-To: php-clamav@packages.debian.org\n"
+"POT-Creation-Date: 2011-06-04 10:12+0200\n"
+"PO-Revision-Date: 2011-05-28 17:35+0100\n"
+"Last-Translator: Argos <argos66@gmail.com>\n"
+"Language-Team: debian-l10n-dutch <debian-l10n-dutch@lists.debian.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Dutch\n"
+
+#. Type: boolean
+#. Description
+#: ../php-clamav.templates:1001
+#, fuzzy
+msgid "Configure clamav.ini option file for php-clamav?"
+msgstr "Wilt u php.ini instellen voor gebruik van clamavLib?"
+
+#. Type: boolean
+#. Description
+#: ../php-clamav.templates:1001
+#, fuzzy
+#| msgid ""
+#| "These scripts can add the necessary options for php-clamav to the PHP ini "
+#| "file."
+msgid ""
+"These scripts can add the necessary options for php-clamav to the PHP ini "
+"extension directory."
+msgstr ""
+"Deze scripts kunnen de nodige opties voor gebruik van clamavLib toevoegen "
+"aan het PHP ini-bestand."
+
+#~ msgid ""
+#~ "These scripts can add the necessary options for clamavLib to the PHP4 ini "
+#~ "file."
+#~ msgstr ""
+#~ "Deze scripts kunnen de nodige opties voor gebruik van clamavLib toevoegen "
+#~ "aan het PHP4 ini-bestand."

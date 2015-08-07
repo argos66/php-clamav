@@ -1,0 +1,6 @@
+Template: php-clamav/edit_phpini
+Type: boolean
+Default: true
+_Description: Configure clamav.ini option file for php-clamav?
+ These scripts can add the necessary options for php-clamav to the PHP ini
+ extension directory.

@@ -1,0 +1,37 @@
+# Translation of php-clamav debconf templates to German
+# Copyright (C) Helge Kreutzmann <debian@helgefjell.de>, 2007, 2010.
+# This file is distributed under the same license as the php-clamav package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: php-clamav 0.15.0\n"
+"Report-Msgid-Bugs-To: php-clamav@packages.debian.org\n"
+"POT-Creation-Date: 2011-06-04 10:12+0200\n"
+"PO-Revision-Date: 2011-05-28 17:36+0100\n"
+"Last-Translator: Argos <argos66@gmail.com>\n"
+"Language-Team: German <debian-l10n-german@lists.debian.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../php-clamav.templates:1001
+#, fuzzy
+msgid "Configure clamav.ini option file for php-clamav?"
+msgstr "Optionsdatei clamav.ini für php-clamav konfigurieren?"
+
+#. Type: boolean
+#. Description
+#: ../php-clamav.templates:1001
+#, fuzzy
+#| msgid ""
+#| "These scripts can add the necessary options for php-clamav to the PHP ini "
+#| "file."
+msgid ""
+"These scripts can add the necessary options for php-clamav to the PHP ini "
+"extension directory."
+msgstr ""
+"Diese Skripte können die notwendigen Optionen für php-clamav zu dem ini-"
+"Erweiterungsverzeichnis von PHP hinzufügen."
