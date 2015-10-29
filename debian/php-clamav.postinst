@@ -4,7 +4,7 @@ set -e
 . /usr/share/debconf/confmodule
 db_get php-clamav/edit_phpini || true
 
-PHP_CONF_PATH=/etc/php5
+PHP_CONF_PATH=/etc/php5/mods-available
 
 if [ "$RET" = true ]; then
 #Deletion of older php-clamav method
@@ -19,18 +19,20 @@ if [ "$RET" = true ]; then
         fi
     done
 #Create clamav.ini file
-    printf "extension=clamav.so\n" > $PHP_CONF_PATH/conf.d/clamav.ini
-    printf "[clamav]\n" >> $PHP_CONF_PATH/conf.d/clamav.ini
-    printf "clamav.dbpath=\"/var/lib/clamav\"\n" >> $PHP_CONF_PATH/conf.d/clamav.ini
-    printf "clamav.maxreclevel=16\n" >> $PHP_CONF_PATH/conf.d/clamav.ini
-    printf "clamav.maxfiles=10000\n" >> $PHP_CONF_PATH/conf.d/clamav.ini
-    printf "clamav.maxfilesize=26214400\n" >> $PHP_CONF_PATH/conf.d/clamav.ini
-    printf "clamav.maxscansize=104857600\n" >> $PHP_CONF_PATH/conf.d/clamav.ini
-    printf "clamav.keeptmp=0\n" >> $PHP_CONF_PATH/conf.d/clamav.ini
-    printf "clamav.load_db_on_startup=0\n" >> $PHP_CONF_PATH/conf.d/clamav.ini
-    printf "clamav.tmpdir=\"/tmp\"\n" >> $PHP_CONF_PATH/conf.d/clamav.ini
+    printf "extension=clamav.so\n" > $PHP_CONF_PATH/clamav.ini
+    printf "[clamav]\n" >> $PHP_CONF_PATH/clamav.ini
+    printf "clamav.dbpath=\"/var/lib/clamav\"\n" >> $PHP_CONF_PATH/clamav.ini
+    printf "clamav.maxreclevel=16\n" >> $PHP_CONF_PATH/clamav.ini
+    printf "clamav.maxfiles=10000\n" >> $PHP_CONF_PATH/clamav.ini
+    printf "clamav.maxfilesize=26214400\n" >> $PHP_CONF_PATH/clamav.ini
+    printf "clamav.maxscansize=104857600\n" >> $PHP_CONF_PATH/clamav.ini
+    printf "clamav.keeptmp=0\n" >> $PHP_CONF_PATH/clamav.ini
+    printf "clamav.load_db_on_startup=0\n" >> $PHP_CONF_PATH/clamav.ini
+    printf "clamav.tmpdir=\"/tmp\"\n" >> $PHP_CONF_PATH/clamav.ini
 
     echo "Configure clamav.ini files....."
+	echo "Enable php-clamav module....."
+	php5enmod clamav.ini
 fi
 
 #DEBHELPER#
