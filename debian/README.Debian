@@ -4,7 +4,7 @@ php-clamav for Debian :
 The php-clamav extension is installed under the php additional .ini files directory.
 
 If you use the debconf feature of this package, you don't need to create clamav.ini manually!
-To enable this library create clamav.ini configfile in /etc/php/conf.d/ and add the following:
+To enable this library create clamav.ini configfile in /etc/php5/mods-available/ and add the following:
 --------------------------------
 extension=clamav.so
 [clamav]

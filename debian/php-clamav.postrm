@@ -2,21 +2,23 @@
 # Copyright 2011 Argos <argos66@gmail.com>
 set -e
 
-PHP_CONF_PATH=/etc/php5
+PHP_CONF_PATH=/etc/php5/mods-available
 
 for ppkg in apache cli cgi apache2; do
-	if [ -f $PHP_CONF_PATH/$ppkg/php.ini ]; then
-		if grep -q "clamav.so" $PHP_CONF_PATH/$ppkg/php.ini; then
+	if [ -f $PHP_CONF_PATH/../$ppkg/php.ini ]; then
+		if grep -q "clamav.so" $PHP_CONF_PATH/../$ppkg/php.ini; then
 			phptemp=`mktemp`
-			sed "s/extension=clamav.so//;s/clamav\..*//;s/\[clamav\]//;" < $PHP_CONF_PATH/$ppkg/php.ini > $phptemp
-			mv -f $phptemp $PHP_CONF_PATH/$ppkg/php.ini
+			sed "s/extension=clamav.so//;s/clamav\..*//;s/\[clamav\]//;" < $PHP_CONF_PATH/../$ppkg/php.ini > $phptemp
+			mv -f $phptemp $PHP_CONF_PATH/../$ppkg/php.ini
 			rm -f $phptemp
 		fi
 	fi
 done
-if [ -f $PHP_CONF_PATH/conf.d/clamav.ini ]; then
-    if grep -q "clamav.so" $PHP_CONF_PATH/conf.d/clamav.ini; then
-        rm -f $PHP_CONF_PATH/conf.d/clamav.ini
+if [ -f $PHP_CONF_PATH/clamav.ini ]; then
+    echo "Disable and remove php-clamav module....."
+    php5dismod clamav
+    if grep -q "clamav.so" $PHP_CONF_PATH/clamav.ini; then
+        rm -f $PHP_CONF_PATH/clamav.ini
     fi
 fi
 
