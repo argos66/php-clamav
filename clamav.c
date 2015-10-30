@@ -355,10 +355,34 @@ PHP_MINFO_FUNCTION(clamav)
 		}
 	}
 
+    int ret = 0;
+    int nb_sigs = 0;
+    char nb_official_sigs[10];
+    char nb_unofficial_sigs[10];
+
+    ret = cl_countsigs(CLAMAV_G(dbpath), CL_COUNTSIGS_OFFICIAL, &nb_sigs);
+    if(ret != CL_SUCCESS) {
+        php_error(E_WARNING, "cl_countsigs() error code : %i (%s)\n", ret, cl_strerror(ret));
+    }else{
+        sprintf(nb_official_sigs, "%u", nb_sigs);
+    }
+
+    ret = 0;
+    nb_sigs = 0;
+
+    ret = cl_countsigs(CLAMAV_G(dbpath), CL_COUNTSIGS_UNOFFICIAL, &nb_sigs);
+    if(ret != CL_SUCCESS) {
+        php_error(E_WARNING, "cl_countsigs() error code : %i (%s)\n", ret, cl_strerror(ret));
+    }else{
+        sprintf(nb_unofficial_sigs, "%u", nb_sigs);
+    }
+
     php_info_print_table_start();
     php_info_print_table_row(2, "Clamav support", "enabled");
     php_info_print_table_row(2, "php-clamav version", PHP_CLAMAV_VERSION);
     php_info_print_table_row(2, "libclamav version", cl_retver());
+    php_info_print_table_row(2, "Nb official signatures", nb_official_sigs);
+    php_info_print_table_row(2, "Nb unofficial signatures", nb_unofficial_sigs);
     php_info_print_table_end();
 
     DISPLAY_INI_ENTRIES();

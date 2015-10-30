@@ -37,7 +37,7 @@ extern zend_module_entry clamav_module_entry;
 #include "TSRM.h"
 #endif
 
-#define PHP_CLAMAV_VERSION "0.15.8"
+#define PHP_CLAMAV_VERSION "0.15.9"
 
 PHP_MINIT_FUNCTION(clamav);
 PHP_MSHUTDOWN_FUNCTION(clamav);
